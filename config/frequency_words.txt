@@ -157,7 +157,7 @@
 
 /腾讯|鹅厂|马化腾|微信|QQ|天美|阅文集团|微众银行|\bTencent\b|\bPony Ma\b|\bWeChat\b|\bLightSpeed\b|\bWeBank\b/ => 腾讯
 
-/qwen|minimax|glm|kimi/ => 国产开源模型
+/千问|qwen|minimax|glm|kimi/ => 国产开源模型
 
 /特斯拉|马斯克|\bTesla\b|\bElon Musk\b|\bCybertruck\b|\bModel 3\b|\bModel Y\b|\bModel S\b|\bModel X\b|\bFSD\b/ => 特斯拉
 
