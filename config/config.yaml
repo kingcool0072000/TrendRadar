@@ -67,8 +67,6 @@ platforms:
       name: "财联社热门"
     - id: "ifeng"
       name: "凤凰网"
-    - id: "weibo"
-      name: "微博"
     - id: "zhihu"
       name: "知乎"
 
@@ -119,6 +117,8 @@ rss:
 
 
 
+
+
     # 自定义源示例
     # - id: "custom-feed"
     #   name: "自定义源"
@@ -159,7 +159,7 @@ report:
   # false: 按匹配到的热点条数排序（条数多的在前）
   sort_by_position_first: true
 
-  rank_threshold: 5                   # 排名高亮阈值
+  rank_threshold: 10                   # 排名高亮阈值
 
   max_news_per_keyword: 2             # 每个关键词最大显示数量（0=不限制）
 
@@ -182,19 +182,19 @@ display:
   #   1. 在此列表中
   #   2. 下方 regions 中对应开关为 true
   region_order:
+    - ai_analysis                       # 5️⃣ AI 分析区域
     - new_items                       # 1️⃣ 新增热点区域
     - hotlist                       # 2️⃣ 热榜区域（关键词匹配）
     - rss                       # 3️⃣ RSS 订阅区域
     - standalone                       # 4️⃣ 独立展示区
-    - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
+    ai_analysis: true # AI 分析区域
     new_items: true # 新增热点区域（含热榜新增 + RSS 新增）
     hotlist: true # 热榜区域（关键词匹配的热点新闻）
     rss: true # RSS 订阅区域
-    standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
-    ai_analysis: true # AI 分析区域
+    standalone: true # 独立展示区（完整热榜/RSS，不受关键词过滤）
   standalone:
-    platforms: [] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
+    platforms: ["thepaper","wallstreetcn-hot","cls-hot"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: ["hacker-news","bing-tech"] # RSS 源 ID 列表（如 ["hacker-news"]）
     max_items: 10                     # 每个源最多展示条数（0=不限制）
 
