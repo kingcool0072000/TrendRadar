@@ -111,7 +111,7 @@ rss:
 
     - id: "bing-tech"
       name: "bing科技"
-      url: "https://www.bing.com/news/search?q=科技+编程&format=RSS"
+      url: "https://www.bing.com/news/search?q=科技+AI&format=RSS"
       max_age_days: 2
 
 
@@ -157,7 +157,7 @@ report:
   # false: 按匹配到的热点条数排序（条数多的在前）
   sort_by_position_first: true
 
-  rank_threshold: 10                   # 排名高亮阈值
+  rank_threshold: 6                   # 排名高亮阈值
 
   max_news_per_keyword: 2             # 每个关键词最大显示数量（0=不限制）
 
@@ -186,11 +186,11 @@ display:
     - standalone                       # 4️⃣ 独立展示区
     - ai_analysis                       # 5️⃣ AI 分析区域
   regions:
-    new_items: true # 新增热点区域（含热榜新增 + RSS 新增）
-    hotlist: true # 热榜区域（关键词匹配的热点新闻）
-    rss: true # RSS 订阅区域
-    standalone: true # 独立展示区（完整热榜/RSS，不受关键词过滤）
-    ai_analysis: true # AI 分析区域
+    new_items: false # 新增热点区域（含热榜新增 + RSS 新增）
+    hotlist: false # 热榜区域（关键词匹配的热点新闻）
+    rss: false # RSS 订阅区域
+    standalone: false # 独立展示区（完整热榜/RSS，不受关键词过滤）
+    ai_analysis: false # AI 分析区域
   standalone:
     platforms: ["thepaper","wallstreetcn-hot","cls-hot"] # 热榜平台 ID 列表（如 ["zhihu", "weibo"]）
     rss_feeds: ["hacker-news","bing-tech"] # RSS 源 ID 列表（如 ["hacker-news"]）
@@ -278,7 +278,7 @@ storage:
   formats:
     sqlite: true                      # 主存储（必须启用）
     txt: false                        # 是否生成 TXT 快照
-    html: true                       # 是否生成 HTML 报告（⚠️ 邮件推送或者需要看网页版报告必须设为 true）
+    html: false                       # 是否生成 HTML 报告（⚠️ 邮件推送或者需要看网页版报告必须设为 true）
 
   # 本地存储配置
   local:
@@ -352,7 +352,7 @@ ai:
                                     # 注意：如果 API 不支持此参数(报 HTTP 400)，请设为 0 以禁用发送
   # 高级选项
   num_retries: 1                    # 失败重试次数
-  fallback_models: []               # 备用模型列表（可选）
+  fallback_models: [zai/glm-4.7]               # 备用模型列表（可选）
                                     # 示例: ["openai/gpt-4o-mini", "openai/deepseek-ai/DeepSeek-V3"]
 
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
