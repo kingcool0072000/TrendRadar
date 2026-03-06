@@ -112,7 +112,7 @@ rss:
     - id: "bing-tech"
       name: "bing科技"
       url: "https://www.bing.com/news/search?q=科技+AI&format=RSS"
-      max_age_days: 2
+      max_age_days: 1
 
 
 
@@ -157,7 +157,7 @@ report:
   # false: 按匹配到的热点条数排序（条数多的在前）
   sort_by_position_first: true
 
-  rank_threshold: 6                   # 排名高亮阈值
+  rank_threshold: 10                   # 排名高亮阈值
 
   max_news_per_keyword: 2             # 每个关键词最大显示数量（0=不限制）
 
@@ -403,7 +403,7 @@ ai_analysis:
   mode: "daily"
 
   # 分析内容配置
-  max_news_for_analysis: 80        # 热榜+RSS 合计参与分析的新闻数量上限（控制成本关键项）
+  max_news_for_analysis: 120        # 热榜+RSS 合计参与分析的新闻数量上限（控制成本关键项）
                                     # 热榜优先占用配额，RSS 使用剩余配额；独立展示区不受此限制
                                     # 推送消息顶部会显示实际的 AI 分析数供参考
 
