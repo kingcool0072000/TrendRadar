@@ -443,7 +443,7 @@ custom:
     weekday_morning:
       name: "工作日早间"
       start: "08:30"
-      end: "10:00"                 # 跨度 2h，留足触发裕量
+      end: "11:00"                 # 跨度 2h，留足触发裕量
       push: true                   # 早上推送一次
       report_mode: "daily"   # 只推新增内容
       # once 继承 default（push: true）→ 窗口内只推一次
