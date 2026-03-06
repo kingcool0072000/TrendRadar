@@ -389,7 +389,7 @@ presets:
 #     其余时间走默认配置（静默采集）
 
 custom:
-  name: "自定义"
+  name: "zclaw"
   description: "完全自由定义时间段、日计划和周映射。"
 
   # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -432,8 +432,8 @@ custom:
 
     deep_quiet:
       name: "深夜静默"
-      start: "14:00"
-      end: "06:00"                 # 23:00 → 次日 06:00（跨日时间段）
+      start: "12:00"
+      end: "08:00"                 # 23:00 → 次日 06:00（跨日时间段）
       collect: true                # 夜间继续采集数据
       analyze: true                # 夜间可以跑 AI 分析（反正不推送）
       push: false                  # 深夜不推送，避免打扰
@@ -442,10 +442,10 @@ custom:
         analyze: false
     weekday_morning:
       name: "工作日早间"
-      start: "08:00"
+      start: "08:30"
       end: "10:00"                 # 跨度 2h，留足触发裕量
       push: true                   # 早上推送一次
-      report_mode: "incremental"   # 只推新增内容
+      report_mode: "daily"   # 只推新增内容
       # once 继承 default（push: true）→ 窗口内只推一次
 
       analyze: true
@@ -455,7 +455,7 @@ custom:
     weekend_morning:
       name: "周末早间"
       start: "10:00"
-      end: "12:00"                 # 跨度 2h
+      end: "11:00"                 # 跨度 2h
       push: true
       report_mode: "daily"         # 周末看全天汇总
       # once 继承 default（push: true）→ 窗口内只推一次
